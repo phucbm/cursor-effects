@@ -1,5 +1,5 @@
 /**
- * Cursor follow and return
+ * Cursor follow and return using GSAP
  * @param options
  */
 function cursorFollowAndReturn(options) {
@@ -10,12 +10,6 @@ function cursorFollowAndReturn(options) {
 
     // exit if elements are not found
     if (!settings.follower.length && !settings.container.length) return;
-
-    // setup css
-    settings.follower.css({
-        'pointerEvents': 'none',
-        'transition': 'none',
-    });
 
     // set button position when mouse move inside wrapper
     settings.container.on("mousemove", function (e) {

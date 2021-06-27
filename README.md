@@ -1,9 +1,9 @@
 # Cursor Effects
 
-All about effects of mouse cursor on mouse move.
+A series of cursor effects.
 
 https://phucbm.github.io/cursor-effects/
 
-## Follow and Return
+## Mouse Follower
 
-https://phucbm.github.io/cursor-effects/follow-n-return/
+https://phucbm.github.io/cursor-effects/mouse-follower

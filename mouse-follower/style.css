@@ -1,0 +1,58 @@
+* {padding:0; margin:0; outline:none; border:none;}
+
+body {
+    height:100vh;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-direction:column;
+    background:#deff66;
+    font-family:"Inconsolata", monospace;
+}
+body:before, body:after {content:"";}
+header {text-align:center;}
+h1 {margin-bottom:10px;}
+.btn {
+    display:inline-flex; align-items:center; text-decoration:none;
+    border:1px solid #1b1f2326; border-radius:5px; padding:5px 7px;
+    color:#24292e; background:#fafbfc;
+    transition:all .3s ease;
+}
+.btn:hover {background:#f3f4f6;}
+.btn svg {margin-right:5px;}
+.btn svg path {fill:#24292e;}
+
+/* tags */
+ul.tags {
+    display:flex; flex-wrap:wrap; justify-content:center;
+    list-style:none;
+}
+ul.tags li {margin:5px; padding:5px 8px; border:1px solid #ccc; border-radius:5px; color:#fff;}
+ul.tags li.gsap {background-color:#54a217;}
+ul.tags li.jquery {background-color:#0c68ad;}
+
+/* wrapper */
+.box {
+    position:relative;
+    width:500px; height:500px;
+    overflow:hidden;
+    border-radius:20px;
+    background:#deff66;
+    box-shadow:8px 8px 18px #b6d154,
+    -8px -8px 18px #ffff78;
+}
+
+/* follower element */
+.follower {
+    /* positioning */
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%, -50%);
+
+    /* decorative */
+    width:100px; height:100px; border-radius:50%;
+    background-color:#1c1c1c; color:#fff;
+
+    /* avoid transition conflict with GSAP */
+    transition:none;
+
+    /* sometimes you need this to avoid hovering flicker */
+    pointer-events:none;
+}
