@@ -1,0 +1,6 @@
+.buttons {height:30vh; display:flex; flex-direction:column; justify-content:space-around;}
+.magnetic {
+    padding:15px 30px;
+    font-size:1.2em;
+    border-radius:5px;
+}

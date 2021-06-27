@@ -7,3 +7,7 @@ https://phucbm.github.io/cursor-effects/
 ## Mouse Follower
 
 https://phucbm.github.io/cursor-effects/mouse-follower
+
+## Magnetic Button
+
+https://phucbm.github.io/cursor-effects/magnetic-button
