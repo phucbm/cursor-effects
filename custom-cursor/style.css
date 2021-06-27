@@ -5,3 +5,15 @@ p:not(:last-child) {margin-bottom:20px;}
 
 a {color:#1c1c1c; font-weight:700;}
 a:hover {color:#0c68ad;}
+
+
+/* Custom Cursor */
+.custom-cursor, .custom-cursor-dot {
+    position:fixed; z-index:999; top:0; left:0;
+    transform:translate(-50%, -50%);
+    pointer-events:none; opacity:0;
+}
+
+/* decorative */
+.custom-cursor {width:62px; height:62px; border:1px solid #1c1c1c; border-radius:50%;}
+.custom-cursor-dot {width:7px; height:7px; border-radius:50%; background-color:#1c1c1c;}
