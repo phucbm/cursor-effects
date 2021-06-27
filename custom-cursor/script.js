@@ -3,15 +3,16 @@ function customCursor(options) {
             targetClass: 'custom-cursor', // create element with this class
             wrapper: $('body'), // jQuery
             speed: .1,
+            movingDelay: 300, // fire event onStop after delay
             hasHover: false, // has hover events
             hoverTarget: $('a[href], button'),
             touchDevices: false, // show on touch devices
-            onHoverIn: function (data) {
-            },
-            onHoverOut: function (data) {
-            },
+            onMove: function (data) {
+            }
         }, options),
-        checkTouch = !settings.touchDevices && "undefined" !== typeof document.documentElement.ontouchstart;
+        data = {},
+        checkTouch = !settings.touchDevices && "undefined" !== typeof document.documentElement.ontouchstart,
+        timer = null;
 
     // exit
     if (checkTouch || !settings.wrapper.length) return;
@@ -23,8 +24,10 @@ function customCursor(options) {
         position = {x: window.innerWidth / 2, y: window.innerHeight / 2},
         mouse = {x: position.x, y: position.y},
         setX = gsap.quickSetter($cursor, "x", "px"),
-        setY = gsap.quickSetter($cursor, "y", "px"),
-        showAnimation = gsap.to($cursor, {opacity: 1, paused: true});
+        setY = gsap.quickSetter($cursor, "y", "px");
+
+    // update data
+    data.cursor = $cursor;
 
     // on mouse move
     window.addEventListener("mousemove", init);
@@ -37,18 +40,33 @@ function customCursor(options) {
         window.addEventListener("mousemove", e => {
             mouse.x = e.x;
             mouse.y = e.y;
+
+            // update data and trigger event
+            data.isMoving = true;
+            settings.onMove(data);
+
+            timer = setTimeout(function () {
+                // update data and trigger event
+                data.isMoving = false;
+                settings.onMove(data);
+            }, settings.movingDelay);
         });
 
         // fade out cursor
         document.addEventListener("mouseleave", e => {
-            showAnimation.reverse();
+            // update data and trigger event
+            data.isInViewport = false;
+            settings.onMove(data);
         });
 
         // update cursor's position
         document.addEventListener("mouseenter", e => {
-            showAnimation.play();
             mouse.x = position.x = e.x;
             mouse.y = position.y = e.y;
+
+            // update data and trigger event
+            data.isInViewport = true;
+            settings.onMove(data);
         });
 
         gsap.ticker.add((time, deltaTime) => {
@@ -61,16 +79,20 @@ function customCursor(options) {
             setY(position.y);
         });
 
-        showAnimation.play();
+        data.isInViewport = true;
     }
 
     // on hover
     if (settings.hasHover && settings.hoverTarget.length) {
         setTimeout(function () {
             settings.hoverTarget.hover(function () {
-                settings.onHoverIn({cursor: $cursor, hoverTarget: $(this)});
+                data.hoverTarget = $(this);
+                data.isHover = true;
+                settings.onMove(data);
             }, function () {
-                settings.onHoverOut({cursor: $cursor, hoverTarget: $(this)});
+                data.hoverTarget = $(this);
+                data.isHover = false;
+                settings.onMove(data);
             });
         }, 100);
     }
@@ -79,11 +101,26 @@ function customCursor(options) {
 // big ball
 customCursor({
     hasHover: true,
-    onHoverIn: function (data) {
-        gsap.to(data.cursor, {scale: 2});
-    },
-    onHoverOut: function (data) {
-        gsap.to(data.cursor, {scale: 1});
+    onMove: function (data) {
+        if (data.isInViewport) {
+            // in viewport
+            if (data.isMoving) {
+                if (data.isHover) {
+                    gsap.to(data.cursor, {opacity: 1, scale: 1.5});
+                } else {
+                    gsap.to(data.cursor, {opacity: .5, scale: .8});
+                }
+            } else {
+                if (data.isHover) {
+                    gsap.to(data.cursor, {opacity: 1, scale: 1.5});
+                } else {
+                    gsap.to(data.cursor, {opacity: .5, scale: 1});
+                }
+            }
+        } else {
+            // out viewport
+            gsap.to(data.cursor, {opacity: 0, scale: 0});
+        }
     },
 });
 
@@ -91,4 +128,11 @@ customCursor({
 customCursor({
     targetClass: 'custom-cursor-dot',
     speed: .5,
+    onMove: function (data) {
+        if (data.isInViewport) {
+            gsap.to(data.cursor, {opacity: 1});
+        } else {
+            gsap.to(data.cursor, {opacity: 0});
+        }
+    },
 });
