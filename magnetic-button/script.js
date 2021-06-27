@@ -77,7 +77,7 @@ function magneticButton(options) {
 
 // init
 magneticButton({
-    distance: 200,
+    distance: 120,
     onEnter: function (data) {
         //gsap.to(data.target, {scale: 1.2});
         console.log(data);
