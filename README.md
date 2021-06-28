@@ -1,8 +1,8 @@
 # Cursor Effects
 
-In this repository, you will find a several intertesting effects which interact with mouse cursor.
+In this repository, you will find a several interesting effects which interact with mouse cursor.
 
-Each effect has a demo and the source code is open to use for everyone.
+Each effect has a demo, and the source code is open to use for everyone.
 
 ## Mouse Follower
 
@@ -18,7 +18,7 @@ We will need a bit more of mathematics to get to know the way this effect works.
 ![alt text](assets/images/cursor-effects-magnetic-button.jpeg "Magnetic Button Chart")
 
 We will create a virtual area around the element, whenever the mouse get into that area, the element will stick with the
-mouse. To know when the mouse is designated zone, we will use a simple formular that we've learn from highschool.
+mouse. To know when the mouse is designated zone, we will use a simple formula that we've learned from high school.
 
 ```js
 OA = sqrt(pow(x, 2) + pow(y, 2));
