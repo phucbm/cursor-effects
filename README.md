@@ -29,7 +29,7 @@ the [source code](https://github.com/phucbm/cursor-effects/tree/main/magnetic-bu
 
 ## Custom Cursor
 
-This one is the most complex one in the series. The original code was from OsuBlake, you can check it our
+This one is the most complex one in the series. The original code was from OsuBlake, you can check it out
 on [CodePen](https://codepen.io/osublake/pen/3170174f4ce844f78c7789a279f8e50e). I've created a plugin-like function so
 that we can reuse it anywhere. Go check the options table below:
 
