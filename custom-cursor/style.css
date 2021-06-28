@@ -1,11 +1,6 @@
 .container {
     width:100%; max-width:700px; padding:0 20px;
 }
-p:not(:last-child) {margin-bottom:20px;}
-
-a {color:#1c1c1c; font-weight:700;}
-a:hover {color:#0c68ad;}
-
 
 /* Custom Cursor */
 .custom-cursor, .custom-cursor-dot {

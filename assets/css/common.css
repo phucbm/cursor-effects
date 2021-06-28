@@ -20,6 +20,11 @@ h1 {margin-bottom:10px;}
 .btn svg {margin-right:5px;}
 .btn svg path {fill:#24292e;}
 
+p:not(:last-child) {margin-bottom:20px;}
+
+a {color:#1c1c1c; font-weight:700;}
+a:hover {color:#0c68ad;}
+
 /* tags */
 ul.tags {
     display:flex; flex-wrap:wrap; justify-content:center;
