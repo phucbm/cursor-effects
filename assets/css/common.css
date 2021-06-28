@@ -28,3 +28,6 @@ ul.tags {
 ul.tags li {margin:5px; padding:5px 8px; border:1px solid #ccc; border-radius:5px; color:#fff;}
 ul.tags li.gsap {background-color:#54a217;}
 ul.tags li.jquery {background-color:#0c68ad;}
+
+/* footer */
+footer {text-align:center;}
