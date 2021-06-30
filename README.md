@@ -6,6 +6,8 @@ Each effect has a demo, and the source code is open to use for everyone.
 
 ## Mouse Follower
 
+![Mouse Follower](assets/images/mouse-follower-demo.gif "Mouse Follower")
+
 This effect is rather simple. We will update an element's position based on the mouse's coordinates on the screen.
 
 See demo at [/mouse-follower](https://phucbm.github.io/cursor-effects/mouse-follower) or check
@@ -13,9 +15,11 @@ the [source code](https://github.com/phucbm/cursor-effects/tree/main/mouse-follo
 
 ## Magnetic Button
 
+![Magnetic Button](assets/images/magnetic-button-demo.gif "Magnetic Button")
+
 We will need a bit more of mathematics to get to know the way this effect works. See the chart below:
 
-![alt text](assets/images/cursor-effects-magnetic-button.jpeg "Magnetic Button Chart")
+![Chart](assets/images/magnetic-button-chart.jpeg "Magnetic Button Chart")
 
 We will create a virtual area around the element, whenever the mouse get into that area, the element will stick with the
 mouse. To know when the mouse is designated zone, we will use a simple formula that we've learned from high school.
@@ -28,6 +32,8 @@ See demo at [/magnetic-button](https://phucbm.github.io/cursor-effects/magnetic-
 the [source code](https://github.com/phucbm/cursor-effects/tree/main/magnetic-button)
 
 ## Custom Cursor
+
+![Custom Cursor](assets/images/custom-cursor-demo.gif "Custom Cursor")
 
 This one is the most complex one in the series. The original code was from OsuBlake, you can check it out
 on [CodePen](https://codepen.io/osublake/pen/3170174f4ce844f78c7789a279f8e50e). I've created a plugin-like function so
