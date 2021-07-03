@@ -1,4 +1,4 @@
-# Cursor Effects
+# [Cursor Effects](https://phucbm.github.io/cursor-effects/)
 
 In this repository, you will find a several interesting effects which interact with mouse cursor.
 
