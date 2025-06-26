@@ -1,5 +1,9 @@
 # [Cursor Effects](https://phucbm.github.io/cursor-effects/)
 
+[![github stars](https://badgen.net/github/stars/phucbm/cursor-effects?icon=github)](https://github.com/phucbm/cursor-effects/)
+[![github license](https://badgen.net/github/license/phucbm/cursor-effects?icon=github)](https://github.com/phucbm/cursor-effects/blob/main/LICENSE)
+[![Made in Vietnam](https://raw.githubusercontent.com/webuild-community/badge/master/svg/made.svg)](https://webuild.community)
+
 In this repository, you will find a several interesting effects which interact with mouse cursor.
 
 Each effect has a demo, and the source code is open to use for everyone.
